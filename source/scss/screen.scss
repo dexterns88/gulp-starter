@@ -1,0 +1,344 @@
+// ----------------------------------------------------------------------------
+// System Setup
+// ----------------------------------------------------------------------------
+//
+// -- Install node.js
+// -- npm install -g gulp
+//
+// go to the theme folder
+// -- run "npm install"
+//
+// during dev, run "gulp watch"
+// when done, run "gulp build"
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+
+  @media only screen and (max-width: 800px) {
+    padding-top: 70px;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+
+  .page-section & {
+    color: #1e5d69;
+  }
+}
+
+p {
+  color: #9f9f9f;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 10px;
+    width: 30px;
+
+    footer & {
+      margin-right: 27px;
+    }
+  }
+}
+
+header {
+  display: flex;
+  background-color: #1e5d69;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #ffff;
+
+  @media only screen and (max-width: 800px) {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+
+  @media only screen and (min-width: 801px) {
+    height: 83px;
+  }
+
+  .flex {
+    @media only screen and (max-width: 800px) {
+      display: block;
+    }
+  }
+
+  .logo {
+    @media only screen and (max-width: 800px) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.page-section {
+  margin-top: 60px;
+
+  > h1 {
+    margin-bottom: 60px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 17px;
+  display: block;
+  font-size: 15px;
+}
+
+nav {
+  text-align: center;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.flex-top {
+    align-items: flex-start;
+  }
+}
+
+.flex-spaced {
+  margin-left: -35px;
+
+  .content-block {
+    padding-left: 35px;
+    width: 50%;
+  }
+}
+
+.site-wrapper {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.travel {
+  text-align: center;
+  position: relative;
+  padding-bottom: 60px;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    background-color: #3daec4;
+  }
+
+  &:before {
+    background-image: url("../../images/suma.png");
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 30px 0;
+  }
+
+  .flex {
+    margin-left: -80px;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      margin-left: 0;
+    }
+
+  }
+
+  img {
+    width: 50px;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 10;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+  }
+
+  .box {
+    padding-left: 5%;
+    position: relative;
+    z-index: 20;
+
+    @media only screen and (max-width: 800px) {
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .box-inner {
+      background: #fff;
+      padding: 25px 20px;
+    }
+  }
+}
+
+.welcome {
+
+  .flex {
+    flex-direction: row-reverse;
+
+    @media only screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  .content-block {
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
+
+    &.image {
+      @media only screen and (max-width: 800px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.tour {
+  padding: 37px;
+
+  .flex {
+    @media only screen and (max-width: 800px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .box {
+    margin: 0 37px;
+    background: #fff;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+
+    @media only screen and (max-width: 800px) {
+      max-width: 100%;
+      margin: 0 0 40px 0;
+    }
+
+    &.active {
+      background: #1e5d69;
+
+      h2 {
+        color: #fff;
+      }
+
+      li {
+        color: #fff;
+      }
+
+      .image-shape {
+        &:after {
+          background: #1e5d69;
+        }
+      }
+    }
+  }
+
+  .image-shape {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      background: #fff;
+      content: "";
+      transform: skew(0deg, -3deg);
+      width: 100%;
+      height: 50px;
+      left: 0;
+      bottom: -31px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 200px;
+    margin: 0 auto 30px;
+  }
+
+  li {
+    padding: 6px 0;
+    text-align: center;
+    border-top: 1px solid #e1e1e1;
+    color: #1b373c;
+
+    &:first-child {
+      border: none;
+    }
+  }
+}
+
+.social {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.footer {
+  background: #1b373c;
+  padding: 12px;
+  color: #fff;
+
+  img {
+    width: 30px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
